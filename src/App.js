@@ -90,7 +90,9 @@ function App() {
 
   const regenerateHeadline = async () => {
     try {
-      const res = await fetch(`${BACKEND_URL}/regenerate-headline?name=${name}&location=${location}`);
+      // const res = await fetch(`${BACKEND_URL}/regenerate-headline?name=${name}&location=${location}`);
+      const res = await fetch(`${BACKEND_URL}/regenerate-headline?name=${data.name}&location=${data.location}`);
+
       const result = await res.json();
       setData((prev) => ({ ...prev, headline: result.headline }));
     } catch (err) {
