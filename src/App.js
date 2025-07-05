@@ -70,10 +70,12 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const BACKEND_URL = "https://backendproject-2-8x4i.onrender.com/"
+
   const fetchBusinessData = async ({ name, location }) => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:4000/business-data", {
+      const res = await fetch(`${BACKEND_URL}/business-data`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, location }),
@@ -88,7 +90,7 @@ function App() {
 
   const regenerateHeadline = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/regenerate-headline?name=${data.name}&location=${data.location}`);
+      const res = await fetch(`${BACKEND_URL}/regenerate-headline?name=${name}&location=${location}`);
       const result = await res.json();
       setData((prev) => ({ ...prev, headline: result.headline }));
     } catch (err) {
