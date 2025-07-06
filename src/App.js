@@ -70,7 +70,7 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const BACKEND_URL = "https://backendproject-4-8x4i.onrender.com"
+  const BACKEND_URL = "https://backendproject-5-2osz.onrender.com/"
 
   const fetchBusinessData = async ({ name, location }) => {
     setLoading(true);
